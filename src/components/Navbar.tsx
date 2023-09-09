@@ -1,16 +1,20 @@
 import {Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
+import {useShoppingCart} from "../context/ShoppingCartContext.tsx";
 
 
 export function Navbar(){
-    return <NavbarBs className="bg-white shadow-sm mb-3">
+    const {openCart} = useShoppingCart();
+    return <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
         <Container>
             <Nav className="me-auto">
-                <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
-                <Nav.Link to="/store" as={NavLink}>Store</Nav.Link>
-                <Nav.Link to="/about" as={NavLink}>About</Nav.Link>
+                <Nav.Link to="/" as={NavLink}>COX AUTOMOTIVE</Nav.Link>
+                <Nav.Link to="/brands" as={NavLink}>BRANDS</Nav.Link>
             </Nav>
-            <Button variant="outline-primary" className="rounded-circle">
+            <Button
+                onClick={openCart}
+                variant="outline-primary"
+                className="rounded-circle">
                 <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 	 width="3rem" height="3rem" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
 <g>
@@ -43,7 +47,9 @@ export function Navbar(){
 	</g>
 
 </g>
-</svg></Button>
+</svg>
+
+            </Button>
         </Container>
     </NavbarBs>
 }

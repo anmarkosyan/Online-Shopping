@@ -1,0 +1,25 @@
+[
+  {
+  "id": 1,
+  "name": "Tesla",
+  "price": 42990,
+  "imgUrl": "/images/tesla-statistics.jpg"
+},
+  {
+    "id": 2,
+    "name": "Ford",
+    "price": 31900,
+    "imgUrl": "/images/2022-ford-ranger-18.jpg"
+},
+  {
+    "id": 3,
+    "name": "Audi",
+    "price": 19000,
+    "imgUrl": "/images/2020-Audi-RS7-Sportback-V1-1080.jpg"
+  },
+  {
+    "id": 4,
+    "name": "BMW",
+    "price": 15000,
+    "imgUrl": "/images/2022-bmw-x1-8.jpg"
+  }]
