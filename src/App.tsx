@@ -22,6 +22,3 @@ const App = function (){
 }
 
 export default App
-
-
-//TODO: correct router with right versioning

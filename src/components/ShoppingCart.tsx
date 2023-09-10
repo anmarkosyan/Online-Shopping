@@ -2,8 +2,11 @@ import { Offcanvas, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext.tsx"
 import { CartItem } from "./CartItem.tsx"
 import { formatCurrency } from "../utils/formatCurrency.ts"
-import { ShoppingCartProps } from './types.ts'
 import carItems from "../data/cars.json"
+
+export type ShoppingCartProps = {
+    isOpen: boolean
+}
 
 export const ShoppingCart = ({isOpen}: ShoppingCartProps) => {
     const {closeCart, cartItems} = useShoppingCart();
