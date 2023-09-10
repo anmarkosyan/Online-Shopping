@@ -1,2 +1,2 @@
-# Online shopping app 
+# Online shopping app UI
 
