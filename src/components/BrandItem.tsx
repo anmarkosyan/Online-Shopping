@@ -1,9 +1,9 @@
 import {Button, Card} from "react-bootstrap";
 import {formatCurrency} from "../utils/formatCurrency.ts";
 import {useShoppingCart} from "../context/ShoppingCartContext.tsx";
-import { CarItemsProps } from './types.ts'
+import { ItemProps } from './types.ts'
 
-export const BrandItem = ({id, name, price, imgUrl}: CarItemsProps) => {
+export const BrandItem = ({id, name, price, imgUrl}: ItemProps) => {
     const {increaseCartQuantity} = useShoppingCart();
 
     return <Card className="h-100">

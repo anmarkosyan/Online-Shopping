@@ -1,11 +1,11 @@
-import cartItems from '../data/cars.json'
 import {Stack} from "react-bootstrap";
 import {formatCurrency} from "../utils/formatCurrency.ts";
-import { CartItemProps } from './types.ts'
+import {  CartItemProps } from './types.ts'
+import { getCarItem } from './getCarItem.ts'
 
 
-export const CartItem = ({id}: CartItemProps) => {
-  const item = cartItems.find(item => item.id === id);
+export const CartItem = ({id, quantity}: CartItemProps) => {
+  const item = getCarItem(id);
     if(!item){
         return;
     }
@@ -19,8 +19,15 @@ export const CartItem = ({id}: CartItemProps) => {
         style={{width: "123px", height: "75px", objectFit: "cover"}}
       />
       <div className="me-auto">
-        <div className="text-muted" style={{fontSize: ".65rem"}}>{item.name} </div>
-        <div className="text-muted" style={{fontSize: ".75rem"}}>{formatCurrency(item.price)}</div>
+        <div>
+          {item.name}{" "}
+          {quantity > 1 && (
+            <span className="text-muted" style={{ fontSize: ".65rem" }}>
+              x{quantity}
+            </span>
+          )}
+        </div>
+        <div className="text-muted" style={{fontSize: ".75rem"}}>{formatCurrency(item.price * quantity)}</div>
       </div>
     </Stack>
 }

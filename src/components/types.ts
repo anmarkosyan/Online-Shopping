@@ -1,4 +1,4 @@
-export type CarItemsProps = {
+export type ItemProps = {
   id: number,
   name: string,
   price:number,
