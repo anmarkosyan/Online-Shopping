@@ -20,10 +20,10 @@ export const CartItem = ({id, quantity}: CartItemProps) => {
       />
       <div className="me-auto">
         <div>
-          {item.name}{" "}
+          {item.name}
           {quantity > 1 && (
             <span className="text-muted" style={{ fontSize: ".65rem" }}>
-              x{quantity}
+              {' '}x{quantity}
             </span>
           )}
         </div>
